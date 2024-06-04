@@ -3,6 +3,9 @@ import { Select } from "@radix-ui/themes";
 interface Props {
   onChange: (status: string) => void;
 }
+import ResizeObserver from 'resize-observer-polyfill';
+ 
+global.ResizeObserver = ResizeObserver;
 
 const OrderStatusSelector = ({ onChange }: Props) => {
   return (

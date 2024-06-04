@@ -1,7 +1,22 @@
-import Onboarding from "../components/Onboarding";
+import OrderStatusSelector from "../components/OrderStatusSelector";
+
+import { useState } from "react";
+
 
 const PlaygroundPage = () => {
-  return <Onboarding />;
+  const [text, setText] = useState<string>("None to display");
+
+  const onChange = (text: string) => {
+    setText(text);
+  }
+
+
+  return (
+    <>
+      <OrderStatusSelector onChange={onChange} />
+      <p>{text}</p>
+    </>
+  )
 };
 
 export default PlaygroundPage;
